@@ -1,0 +1,1 @@
+add_library(libStudentMng STATIC studentManager.cpp studentManager.hpp)
