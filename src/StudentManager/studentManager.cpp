@@ -67,3 +67,22 @@ char *StudentManager::getBestStudentByGrade(const StudentManager s) {
         return s.name;
 }
 
+StudentManager StudentManager::operator=(StudentManager &obj) {
+    if(strlen(name) < strlen(obj.name)) {
+        //not enough memory for target memory => realocate memory
+        delete[] name; //release old resource in order to allocate enough
+        name = new char[strlen(obj.name)+1];
+        #ifdef DEBUG
+            cout<<"Not enough memory for this assginment. Allocating more memory "<<__LINE__<<endl;
+        #endif
+    }
+    strcpy(name, obj.name);
+    *age = *obj.age;
+    *averageGrade = *obj.averageGrade;
+    
+    return *this;
+}
+
+void StudentManager::printStudentData(void) {
+            cout<<name<<" "<<*age<<" "<<*averageGrade<<endl;
+        }

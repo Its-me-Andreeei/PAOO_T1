@@ -14,6 +14,16 @@ int main() {
 
     s1.printWelcomeMessage();
     s2.printWelcomeMessage();
+    
+    cout<<"Before assgignment:"<<endl;
+    s1.printStudentData();
+    s2.printStudentData();
+
+    s1 = s2;
+
+    cout<<"After assignment:"<<endl;
+    s1.printStudentData();
+    s2.printStudentData();
 
     return 0;
 }
