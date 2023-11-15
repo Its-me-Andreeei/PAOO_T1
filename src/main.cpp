@@ -30,6 +30,6 @@ int main() {
 
     studentClass<int> s(list);
 
-    cout<< s.getNoOfGradesGreaterThen<double>(0.1)<<endl;
+    s.getNoOfGradesGreaterThen<double>(1);
     return 0;
 }

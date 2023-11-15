@@ -6,7 +6,7 @@
 
 using namespace std;
 namespace student {
-    template <class T>
+    template <typename T>
     class studentClass {
         private:
             vector<shared_ptr<WorkingStudent>> list;
@@ -15,6 +15,6 @@ namespace student {
         explicit studentClass(const vector <shared_ptr<WorkingStudent>> &list) : list(list) {}
 
         T computeAverageOfAllStudents();
-            template <class G>  T getNoOfGradesGreaterThen(G threshold);
+        template <typename G> void getNoOfGradesGreaterThen(G threshold);
     };
 }
