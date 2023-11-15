@@ -30,6 +30,7 @@ int main() {
 
     studentClass<int> s(list);
 
-    s.getNoOfGradesGreaterThen<double>(1);
+    s.getNoOfGradesGreaterThen<int>(1);
+
     return 0;
 }
