@@ -18,3 +18,8 @@ build/liblibStudentMng.a
 *.a
 build/exe
 .vscode/settings.json
+src/StudentManager/StudentClass/Makefile
+*.cmake
+*.log
+src/cmake-build-debug/CMakeCache.txt
+.idea/sonarlint/issuestore/index.pb

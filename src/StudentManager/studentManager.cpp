@@ -18,7 +18,7 @@ namespace student {
         #endif
     }
 
-    StudentManager::StudentManager(char *name, unsigned int age, unsigned int averageGrade) {
+    StudentManager::StudentManager(const char *name, unsigned int age, unsigned int averageGrade) {
         this->name = new char[strlen(name) + 1];
         this->age = new unsigned;
         this->averageGrade = new unsigned;

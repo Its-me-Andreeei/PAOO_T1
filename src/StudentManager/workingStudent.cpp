@@ -4,26 +4,13 @@
 
 namespace student {
 
-    WorkingStudent::WorkingStudent(WorkingStudent &&obj) : WorkingStudent(obj.getJobName(), obj.getSalary(), obj.getName(), obj.getAge(), obj.getAverageGrade())
-    {
-        obj.setAge(0);
-        obj.setAverageGrade(0);
-        obj.setName("");
-        obj.setSalary(0);
-        obj.setJobName("");
-        #ifdef DEBUG
-            std::cout<<"Move constructor called : "<<__LINE__<<std::endl;
-        #endif      
-    }
-
-    WorkingStudent::WorkingStudent(char *jobName, float salary, char *name, unsigned int age, unsigned int averageGrade) 
+    WorkingStudent::WorkingStudent(const char *jobName, float salary, const char *name, unsigned int age, unsigned int averageGrade)
         : StudentManager(name, age, averageGrade)
     {
          this->jobName = new char[strlen(jobName) + 1];
          this->salary = new float(salary);
 
          strcpy(this->jobName, jobName);
-         //*this->salary = salary;
 
         #ifdef DEBUG
             std::cout<<"Derived class basic constructor called : "<<__LINE__<<std::endl;

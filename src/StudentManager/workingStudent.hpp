@@ -6,9 +6,8 @@ namespace student {
         char *jobName;
         float *salary;
         public:
-            WorkingStudent(char *jobName, float salary, char *name, unsigned int age, unsigned int averageGrade);
+            WorkingStudent(const char *jobName, float salary, const char *name, unsigned int age, unsigned int averageGrade);
             ~WorkingStudent();
-            WorkingStudent(WorkingStudent &&obj);
 
             void printStudentData(void);
             virtual void printWelcomeMessage(void);

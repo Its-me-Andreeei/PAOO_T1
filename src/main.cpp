@@ -2,6 +2,9 @@
 #include "StudentManager/studentManager.hpp"
 #include "StudentManager/workingStudent.hpp"
 #include "StudentManager/hardWorkingStudent.hpp"
+#include "StudentManager/StudentClass/studentClass.hpp"
+#include <memory>
+#include <vector>
 
 using namespace std;
 using namespace student;
@@ -15,12 +18,18 @@ int main() {
     s1.printStudentData();
     s2.printStudentData();
 
-    s1.printWelcomeMessage();
-    s4->printWelcomeMessage();
-    s4 = &s5;
-    s4->printWelcomeMessage();
+    auto p1 = make_unique<WorkingStudent>("SW-Dev", 10, "Ana", 21, 8);
+    p1->printStudentData();
+    unique_ptr<WorkingStudent> p2 = std::move(p1);
+    p2->printStudentData();
 
-    WorkingStudent s3 =std:: move(s1);
+    //memory automatically dealocated by unique_ptr
+    vector<shared_ptr<WorkingStudent>> list = {
+            make_shared<WorkingStudent>("SW-Dev", 10, "Ana", 21, 8),
+            make_shared<WorkingStudent>("SW-Tester", 11, "Maria", 22, 9)};
 
+    studentClass<int> s(list);
+
+    cout<< s.getNoOfGradesGreaterThen<double>(0.1)<<endl;
     return 0;
 }
